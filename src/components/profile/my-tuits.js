@@ -17,5 +17,5 @@ const MyTuits = () => {
                deleteTuit={deleteTuit}/>
     );
 };
-
+//Mytuits is exported.
 export default MyTuits;
