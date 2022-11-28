@@ -42,3 +42,5 @@ function Navigation() {
 };
 
 export default Navigation;
+
+//navigation properly done
