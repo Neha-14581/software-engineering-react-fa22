@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import * as service from "../../services/users-service";
 import * as security from "../../services/security-service";
 import React from "react";
-import {UserList} from "../profile/user-list";
+import {UserList} from "./user-list";
 
 export const Login = () => {
     const [loginUser, setLoginUser] = useState({});
@@ -43,6 +43,7 @@ export const Login = () => {
       <h1>Login As</h1>
 
       <UserList users={existingUsers} deleteUser={deleteUser}/>
+
     </div>
   );
 };
