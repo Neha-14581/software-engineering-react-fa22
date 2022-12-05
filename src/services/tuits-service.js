@@ -38,3 +38,6 @@ export const deleteTuit = (tid) =>
 export const deleteTuitByContent = (tuit) =>
     api.get(`${TUITS_API}/${tuit}/delete`)
         .then(response => response.data);
+
+
+//bug fix
