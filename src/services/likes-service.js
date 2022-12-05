@@ -4,6 +4,8 @@ import axios from "axios";
 //const BASE_URL = "https://software-engineering-node-like.herokuapp.com";
 const USERS_API = 'https://fse-neha-a2.herokuapp.com/api/users';
 const TUITS_API = 'https://tuiterfsedev.herokuapp.com/api/tuits';
+
+
 const api = axios.create({
   withCredentials: true
 });
@@ -39,6 +41,3 @@ export const userDislikesTuit = (uid, tid) =>
 export const tuitDislikedByMe = (uid, tid) =>
     api.get(`${USERS_API}/${uid}/dislikes/${tid}`)
         .then(response => response.data);
-
-
-//bug fix..
