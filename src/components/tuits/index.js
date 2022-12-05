@@ -28,3 +28,5 @@ const Tuits = ({tuits = [], refreshTuits}) => {
 }
 
 export default Tuits;
+
+//bug fix
