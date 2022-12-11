@@ -1,21 +1,19 @@
 import {useEffect, useState} from "react";
 import * as service from "../../services/tuits-service";
-import Tuits from "../tuits/tuit";
-
+import Tuits from "../tuits";
 
 const MyTuits = () => {
     const [tuits, setTuits] = useState([]);
     const findMyTuits = () =>
+    {console.log("findmytuits")
         service.findTuitByUser("me")
             .then(tuits => setTuits(tuits));
+    }
     useEffect(findMyTuits, []);
-    const deleteTuit = (tid) =>
-        service.deleteTuit(tid)
-            .then(findMyTuits);
     return(
         <Tuits tuits={tuits}
-               deleteTuit={deleteTuit}/>
+               refreshTuits={findMyTuits}/>
     );
 };
-//Mytuits is exported.
+
 export default MyTuits;

@@ -1,4 +1,3 @@
-
 import {UserList} from "../components/profile/user-list";
 import {screen, render} from "@testing-library/react";
 import {HashRouter} from "react-router-dom";
@@ -16,21 +15,21 @@ const MOCKED_USERS = [
 // test rendering user array render a user array
 test('user list renders static user array', () => {
   render(
-      <HashRouter>
-        <UserList users={MOCKED_USERS}/>
-      </HashRouter>);
+    <HashRouter>
+      <UserList users={MOCKED_USERS}/>
+    </HashRouter>);
   const linkElement = screen.getByText(/ellen_ripley/i);
   expect(linkElement).toBeInTheDocument();
 });
 
 // test rendering from REST retrieve users from REST render users retrieved from REST API
 test('user list renders async', async () => {
-  const users = await findAllUsers();
-  render(
+    const users = await findAllUsers();
+    render(
       <HashRouter>
         <UserList users={users}/>
       </HashRouter>);
-  const linkElement = screen.getByText(/Forum/i);
-  expect(linkElement).toBeInTheDocument();
-})
+    const linkElement = screen.getByText(/Forum/i);
+    expect(linkElement).toBeInTheDocument();
+  })
   

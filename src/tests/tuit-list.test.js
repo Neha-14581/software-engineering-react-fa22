@@ -19,9 +19,9 @@ const MOCKED_TUITS = [
 // test tuit list renders static tuit array
 test('tuit list renders static tuit array', () => {
   render(
-      <HashRouter>
-        <Tuits tuits={MOCKED_TUITS}/>
-      </HashRouter>
+    <HashRouter>
+      <Tuits tuits={MOCKED_TUITS}/>
+    </HashRouter>
   );
   const linkElementA = screen.getByText(/alice's tuit/i);
   const linkElementB = screen.getByText(/bob's tuit/i);
@@ -35,9 +35,9 @@ test('tuit list renders static tuit array', () => {
 test('tuit list renders async', async () => {
   const tuits = await findAllTuits();
   render(
-      <HashRouter>
-        <Tuits tuits={tuits}/>
-      </HashRouter>
+    <HashRouter>
+      <Tuits tuits={tuits}/>
+    </HashRouter>
   );
   const linkElement = screen.getByText(/In 2021, our @NASAPersevere/i);
   const linkElementA = screen.getByText(/@SpaceX Dragon spacecraft/i);
